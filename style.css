@@ -8,7 +8,6 @@
 html {
 	height: 100%;
 	font-family: "Swedbank Sans Medium";
-	background-color: grey;
 }
 body {
 	min-height: 100%;
@@ -16,8 +15,6 @@ body {
 	padding: 0;
 	display: flex;
 	flex-direction: column;
-	max-width: 600px;
-	background-color: white;
 }
 #gradient {
 	height: 8px;
@@ -39,8 +36,12 @@ header .logo {
 	height: 50%;
 	margin: 16px 0 0 50px;
 }
+#content {
+	flex-grow: 1;
+	padding: 0;
+}
 nav {
-	width: 250px;
+	width: 260px;
 	border-right: 1px solid #EBE7E2;
 	flex-shrink: 0;
     -webkit-touch-callout: none;
@@ -95,17 +96,31 @@ nav ul li {
 nav li:hover {
   cursor: pointer;
 }
+nav input[type=checkbox]:checked ~ label:before {
+	content: '';
+	background-image: url('img/caret-up.svg');
+    position: absolute;
+    width: 8px;
+    height: 5px;
+    margin-left: 168px;
+    margin-top: 20px; 
+}
 nav input[type=checkbox]:checked ~ label,
 nav input[type=checkbox]:checked ~ ul {
-	background-color: rgba(235, 231, 226, 0.3);
+	background-color: #fff;
 }
 nav input[type=checkbox]:not(:checked) ~ ul {
 	height: 0;
 	overflow: hidden;
 }
-#content {
-	flex-grow: 1;
-	padding: 24px 0 0 46px;
+nav input[type=checkbox]:not(:checked) ~ label:before {
+	content: '';
+	background-image: url('img/caret-down.svg');
+    position: absolute;
+    width: 8px;
+    height: 5px;
+    margin-left: 168px;
+    margin-top: 20px; 
 }
 nav li.active {
 	background-color: #FBF2EA;
@@ -131,4 +146,19 @@ nav ul li ul li a {
 /*Ugly double line hack, sorry :(*/
 a.twolinehack {
 	line-height: 23px;
+}
+
+nav li.active {
+	background-color: #FBF2EA;
+}
+nav li.active:not(.expanded) {
+	box-shadow: inset 4px 0px 0px 0px #F35B1C;
+}
+nav li.active.expanded {
+	background-color: transparent;
+}
+nav li.active.expanded a {
+}
+nav li.active.expanded ul a {
+	cursor: pointer;
 }

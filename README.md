@@ -1,2 +1,1 @@
-# swedbank-nib-menu-desktop-v2
- 
+# swedbank-nib-menu-desktop
