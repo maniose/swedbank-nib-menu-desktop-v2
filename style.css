@@ -108,11 +108,11 @@ nav li a:hover {
 nav input[type=checkbox]:checked ~ label:before {
 	content: '';
 	background-image: url('img/caret-up.svg');
-    position: absolute;
+    position: relative;
     width: 8px;
     height: 5px;
-    margin-left: 148px;
-    margin-top: 20px; 
+    left: 142px;
+    display: inline-block;
 }
 nav input[type=checkbox]:checked ~ label,
 nav input[type=checkbox]:checked ~ ul {
@@ -125,11 +125,11 @@ nav input[type=checkbox]:not(:checked) ~ ul {
 nav input[type=checkbox]:not(:checked) ~ label:before {
 	content: '';
 	background-image: url('img/caret-down.svg');
-    position: absolute;
+    position: relative;
     width: 8px;
     height: 5px;
-    margin-left: 148px;
-    margin-top: 20px; 
+    left: 142px;
+    display: inline-block;
 }
 nav ul li.active ul {
 	visibility: visible;
